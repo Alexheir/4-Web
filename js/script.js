@@ -3,6 +3,37 @@ window.addEventListener("scroll", () => {
   header.classList.toggle("sticky", this.window.scrollY > 80);
 });
 
+const home = document.querySelector("#a-home");
+window.addEventListener("scroll", () => {
+  home.classList.toggle("active", window.scrollY <= 100);
+});
+
+// Función para verificar qué sección está visible en la pantalla
+function setActiveNavItem() {
+  // Obtenemos todas las secciones
+  const sections = document.querySelectorAll("section");
+  // Iteramos sobre cada sección
+  sections.forEach((e) => {
+    // Verificamos si la sección está en la parte superior de la pantalla
+    if (e.getBoundingClientRect().top <= window.innerHeight / 2) {
+      // Si la sección está visible, obtenemos su ID
+      const id = e.getAttribute("id");
+      // Buscamos el elemento de navegación correspondiente y le agregamos la clase 'active'
+      const navItem = document.querySelector(`a[href="#${id}"]`);
+      // Removemos la clase 'active' de todos los elementos de navegación
+      document.querySelectorAll(".navlist a").forEach((item) => {
+        item.classList.remove("active");
+      });
+      if (navItem) {
+        navItem.classList.add("active");
+      }
+    }
+  });
+}
+
+// Llamamos a la función cuando se carga la página y cada vez que se desplaza
+window.addEventListener("load", setActiveNavItem);
+window.addEventListener("scroll", setActiveNavItem);
 /* Open Menu */
 
 let menu = document.getElementById("menu-icon");

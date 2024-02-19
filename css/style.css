@@ -140,6 +140,20 @@ section {
   }
 }
 
+#home {
+  opacity: 0; /* Empieza invisible */
+  animation: fadeIn 2s ease-in-out forwards; /* Duración de 2 segundos y mantiene el estado final */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .home-text {
   & h1 {
     font-size: var(--big-font);

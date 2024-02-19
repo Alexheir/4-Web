@@ -51,7 +51,6 @@ window.onscroll = () => {
   navlist.classList.remove("open");
 };
 
-
 /* Button Scroll visibility*/
 
 const scrollButton = document.querySelector("#scroll-button");
@@ -71,7 +70,6 @@ function hideScrollButton() {
 // Llamamos a la función cuando se carga la página y cada vez que se desplaza
 window.addEventListener("load", hideScrollButton);
 window.addEventListener("scroll", hideScrollButton);
-
 
 /* Script reveal */
 

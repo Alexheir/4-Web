@@ -46,6 +46,7 @@ header {
   &.sticky {
     padding: 12px 14%;
     background: var(--other-color);
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3);
   }
 }
 

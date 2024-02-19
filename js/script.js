@@ -51,6 +51,28 @@ window.onscroll = () => {
   navlist.classList.remove("open");
 };
 
+
+/* Button Scroll visibility*/
+
+const scrollButton = document.querySelector("#scroll-button");
+const homeSection = document.querySelector("#home");
+
+function hideScrollButton() {
+  // Verifica si la parte inferior de la sección "home" ha pasado más allá de la parte superior de la pantalla
+  if (homeSection.getBoundingClientRect().bottom <= 0) {
+    // Si la sección "home" ya no está visible, quitamos la clase "hidden" del botón
+    scrollButton.classList.remove("hidden");
+  } else {
+    // Si la sección "home" está visible, agregamos la clase "hidden" al botón
+    scrollButton.classList.add("hidden");
+  }
+}
+
+// Llamamos a la función cuando se carga la página y cada vez que se desplaza
+window.addEventListener("load", hideScrollButton);
+window.addEventListener("scroll", hideScrollButton);
+
+
 /* Script reveal */
 
 const sr = ScrollReveal({

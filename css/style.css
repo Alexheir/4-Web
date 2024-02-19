@@ -509,6 +509,7 @@ section {
   bottom: 2rem;
   border-top: 2rem;
   right: 3.2rem;
+  transition: var(--transition);
 
   & i {
     font-size: 22px;
@@ -517,6 +518,10 @@ section {
     padding: 10px;
     border-radius: 2rem;
   }
+}
+
+.hidden {
+  opacity: 0;
 }
 
 /* Media */
